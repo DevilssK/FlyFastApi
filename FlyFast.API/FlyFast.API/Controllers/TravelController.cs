@@ -1,10 +1,11 @@
-using FlyFast.API.Models;
+﻿using FlyFast.API.Models;
 using FlyFast.API.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace FlyFast.API.Controllers
 {
@@ -26,31 +27,32 @@ namespace FlyFast.API.Controllers
         }
 
         [HttpGet]
-        [Route("Line")]
-        public List<Trip> GetListOfLine()
+        [Route("Lines")]
+        public List<Line> GetListOfLines()
         {
-            List<Trip> trips = new List<Trip>();
+            List<Line> Lines = new List<Line>();
+            foreach (var item in _repository.GetTravels())
+            {
+                foreach (var line in item.Line)
+                {
+                    Line oneLine = new Line();
+                    oneLine.Id = line.Id;
+                    oneLine.Price = line.Price;
+                    oneLine.Arrived = line.Arrived;
+                    oneLine.Departure = line.Departure;
+                    oneLine.Date = line.Date;
+                    Lines.Add(oneLine);
+                }
+            }
+          
 
-            trips = _repository.GetTravels();
-
-            return trips;
+            return Lines;
         }
 
 
         [HttpPost]
         [Route("Book")]
         public bool PostReservation(string customerName, int tripId)
-        {
-            Customer customer = new Customer();
-            customer.Name = customerName;
-            Trip trip = CACHE.Trips.Where(x => x.Id == tripId).FirstOrDefault();
-            _repository.AddCustomerInPlane(customer, trip);
-            return true;
-        }
-
-        [HttpPost]
-        [Route("Order")]
-        public bool PostOrder(string customerName, int tripId)
         {
             Customer customer = new Customer();
             customer.Name = customerName;

@@ -41,10 +41,21 @@ namespace FlyFast.API.Repository
                 {
                   new Line()
                   {
+                      Id= 1,
                     Departure = AIRPORT.DTW,
                     Arrived = AIRPORT.JFK,
                     Plane = plane,
-                    Price = 300
+                    Price = 300,
+                    Date = DateTime.Now.AddDays(5)
+                  },
+                  new Line()
+                  {
+                         Id= 2,
+                    Departure = AIRPORT.JFK,
+                    Arrived = AIRPORT.CDG,
+                    Plane = plane,
+                    Price = 300,
+                     Date = DateTime.Now.AddDays(6)
                   }
                 }
                ,
@@ -59,10 +70,12 @@ namespace FlyFast.API.Repository
                 {
                   new Line()
                   {
+                         Id= 3,
                     Departure = AIRPORT.JFK,
                     Arrived = AIRPORT.DTW,
                     Plane = plane,
-                    Price = 300
+                    Price = 300,
+                       Date = DateTime.Now.AddDays(5)
                   }
                 },
                 Date = DateTime.Now.AddDays(5),
@@ -77,10 +90,12 @@ namespace FlyFast.API.Repository
                 {
                   new Line()
                   {
+                         Id= 4,
                     Departure = AIRPORT.CDG,
                     Arrived = AIRPORT.DTW,
                     Plane = plane,
-                    Price = 700
+                    Price = 700,
+                       Date = DateTime.Now.AddDays(5)
                   }
                 },
                 Date = DateTime.Now.AddDays(5)
@@ -94,10 +109,12 @@ namespace FlyFast.API.Repository
                 {
                   new Line()
                   {
+                         Id= 5,
                     Departure = AIRPORT.DTW,
                     Arrived = AIRPORT.CDG,
                     Plane = plane,
-                    Price = 700
+                    Price = 700,
+                       Date = DateTime.Now.AddDays(5)
                   }
                 },
                 Date = DateTime.Now.AddDays(5),
@@ -112,10 +129,12 @@ namespace FlyFast.API.Repository
                 {
                   new Line()
                   {
+                         Id= 6,
                     Departure = AIRPORT.JFK,
                     Arrived = AIRPORT.CDG,
                     Plane = plane,
-                    Price = 1000
+                    Price = 1000,
+                       Date = DateTime.Now.AddDays(5)
                   }
                 },
                 Date = DateTime.Now.AddDays(5),
@@ -129,10 +148,12 @@ namespace FlyFast.API.Repository
                 {
                   new Line()
                   {
+                         Id= 7,
                     Departure = AIRPORT.CDG,
                     Arrived = AIRPORT.JFK,
                     Plane = plane,
-                    Price = 1000
+                    Price = 1000,
+                       Date = DateTime.Now.AddDays(5)
                   }
                 },
                 Date = DateTime.Now.AddDays(5),
@@ -141,11 +162,7 @@ namespace FlyFast.API.Repository
 
         public void AddCustomerInPlane(Customer customer, Trip trip)
         {
-            foreach(Line item in trip.Line)
-            {
-                item.Plane.Customers.Add(customer);
-            }
-
+            // trip.Line.Customers.Add(customer);
         }
 
 

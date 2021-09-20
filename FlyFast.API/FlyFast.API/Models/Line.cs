@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,5 +12,6 @@ namespace FlyFast.API.Models
         public AIRPORT Arrived { get; set; }
         public Plane Plane { get; set; }
         public float Price { get; set; }
+        public DateTime Date { get; set; }
     }
 }
