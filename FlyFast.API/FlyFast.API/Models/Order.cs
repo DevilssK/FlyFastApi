@@ -7,9 +7,10 @@ namespace FlyFast.API.Models
 {
     public class Order
     {
-        public int price { get; set; }
+        public float price { get; set; }
         public Customer customer { get; set; }
         public Trip trip { get; set; }
         public DateTime date { get; set; }
+
     }
 }

@@ -137,6 +137,62 @@ namespace FlyFast.API.Repository
                 },
                 Date = DateTime.Now.AddDays(5),
             });
+
+            CACHE.Orders.Add(new Order()
+            {
+                price = 1000,
+                customer = new Customer()
+                {
+                    Name = "toto"
+                },
+                date = new DateTime(),
+                trip = CACHE.Trips[1]
+
+            }) ;
+
+            CACHE.Orders.Add(new Order()
+            {
+                price = 1000,
+                customer = new Customer()
+                {
+                    Name = "tutu"
+                },
+                date = new DateTime(),
+                trip = CACHE.Trips[1]
+
+            });
+
+        }
+
+        internal void CreateOrder(int tripId , Customer customer)
+        {
+            List<Line> lines = CACHE.Trips.Where(x => x.Id == tripId).FirstOrDefault().Line;
+
+            float price = 0;
+            if(lines.Count > 1)
+            {
+                
+                foreach(Line item in lines)
+                {
+                    price += item.Price;
+                }
+
+                price =  price * 0.85f;
+            }
+            else
+            {
+                price = lines.FirstOrDefault().Price;
+            }
+
+
+            CACHE.Orders.Add(new Order()
+            {
+                price = price,
+                date = DateTime.Now,
+                trip = CACHE.Trips.Where(x=> x.Id == tripId).FirstOrDefault(),
+                customer = customer
+            });
+
         }
 
         public void AddCustomerInPlane(Customer customer, Trip trip)
