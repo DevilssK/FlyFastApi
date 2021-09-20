@@ -141,5 +141,20 @@ namespace FlyFast.API.Repository
 
             return trips;
         }
+
+        public int PlacesInvalibility(Trip trip)
+        {
+            int places = trip.Plane.MaxPlaces - trip.Plane.Customers.Count;
+            return places;
+
+        }
+
+        public int FirstClassInvalibility(TICKET_TYPE type, Trip trip)
+        {
+            int firstclassCustomers = trip.Plane.Customers.Where(x => x.TICKET_TYPE == TICKET_TYPE.FIRST_CLASS).Count();
+            int firstClassPlaces = Convert.ToInt32(trip.Plane.MaxPlaces * 0.10);
+
+            return firstClassPlaces - firstclassCustomers;
+        }
     }
 }
