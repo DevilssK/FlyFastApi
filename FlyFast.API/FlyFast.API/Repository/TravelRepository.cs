@@ -37,13 +37,17 @@ namespace FlyFast.API.Repository
             CACHE.Trips.Add(new Trip()
             {
                 Id = i,
-                Line = new Line
+                Line = new List<Line>()
                 {
+                  new Line()
+                  {
                     Departure = AIRPORT.DTW,
-                    Arrived = AIRPORT.JFK
-                },
+                    Arrived = AIRPORT.JFK,
+                    Plane = plane
+                  }
+                }
+               ,
                 Date = DateTime.Now.AddDays(5),
-                Plane = plane,
                 PriceSecondClass = 300
             });
 
@@ -51,13 +55,16 @@ namespace FlyFast.API.Repository
             CACHE.Trips.Add(new Trip()
             {
                 Id = i,
-                Line = new Line
+                Line = new List<Line>()
                 {
+                  new Line()
+                  {
                     Departure = AIRPORT.JFK,
-                    Arrived = AIRPORT.DTW
+                    Arrived = AIRPORT.DTW,
+                    Plane = plane
+                  }
                 },
                 Date = DateTime.Now.AddDays(5),
-                Plane = plane1,
                 PriceSecondClass = 300,
 
             });
@@ -66,13 +73,16 @@ namespace FlyFast.API.Repository
             CACHE.Trips.Add(new Trip()
             {
                 Id = i,
-                Line = new Line
+                Line = new List<Line>()
                 {
+                  new Line()
+                  {
                     Departure = AIRPORT.CDG,
-                    Arrived = AIRPORT.DTW
+                    Arrived = AIRPORT.DTW,
+                    Plane = plane
+                  }
                 },
                 Date = DateTime.Now.AddDays(5),
-                Plane = plane2,
                 PriceSecondClass = 700,
             });
 
@@ -80,13 +90,16 @@ namespace FlyFast.API.Repository
             CACHE.Trips.Add(new Trip()
             {
                 Id = i,
-                Line = new Line
+                Line = new List<Line>()
                 {
+                  new Line()
+                  {
                     Departure = AIRPORT.DTW,
-                    Arrived = AIRPORT.CDG
+                    Arrived = AIRPORT.CDG,
+                    Plane = plane
+                  }
                 },
                 Date = DateTime.Now.AddDays(5),
-                Plane = plane3,
                 PriceSecondClass = 700,
             });
 
@@ -95,13 +108,16 @@ namespace FlyFast.API.Repository
             CACHE.Trips.Add(new Trip()
             {
                 Id = i,
-                Line = new Line
+                Line = new List<Line>()
                 {
+                  new Line()
+                  {
                     Departure = AIRPORT.JFK,
-                    Arrived = AIRPORT.CDG
+                    Arrived = AIRPORT.CDG,
+                    Plane = plane
+                  }
                 },
                 Date = DateTime.Now.AddDays(5),
-                Plane = plane4,
                 PriceSecondClass = 1000,
             });
 
@@ -109,20 +125,23 @@ namespace FlyFast.API.Repository
             CACHE.Trips.Add(new Trip()
             {
                 Id = i,
-                Line = new Line
+                Line = new List<Line>()
                 {
+                  new Line()
+                  {
                     Departure = AIRPORT.CDG,
-                    Arrived = AIRPORT.JFK
+                    Arrived = AIRPORT.JFK,
+                    Plane = plane
+                  }
                 },
                 Date = DateTime.Now.AddDays(5),
-                Plane = plane5,
                 PriceSecondClass = 1000,
             });
         }
 
         public void AddCustomerInPlane(Customer customer, Trip trip)
         {
-            trip.Plane.Customers.Add(customer);
+           // trip.Line.Customers.Add(customer);
         }
 
 
@@ -144,17 +163,17 @@ namespace FlyFast.API.Repository
 
         public int PlacesInvalibility(Trip trip)
         {
-            int places = trip.Plane.MaxPlaces - trip.Plane.Customers.Count;
-            return places;
+            //int places = trip.Plane.MaxPlaces - trip.Plane.Customers.Count;
+            return 0;
 
         }
 
         public int FirstClassInvalibility(TICKET_TYPE type, Trip trip)
         {
-            int firstclassCustomers = trip.Plane.Customers.Where(x => x.TICKET_TYPE == TICKET_TYPE.FIRST_CLASS).Count();
-            int firstClassPlaces = Convert.ToInt32(trip.Plane.MaxPlaces * 0.10);
+            //int firstclassCustomers = trip.Plane.Customers.Where(x => x.TICKET_TYPE == TICKET_TYPE.FIRST_CLASS).Count();
+           // int firstClassPlaces = Convert.ToInt32(trip.Plane.MaxPlaces * 0.10);
 
-            return firstClassPlaces - firstclassCustomers;
+            return 0;
         }
     }
 }

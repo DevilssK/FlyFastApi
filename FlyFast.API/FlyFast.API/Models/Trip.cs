@@ -7,6 +7,11 @@ namespace FlyFast.API.Models
 {
     public class Trip
     {
+        public Trip()
+        {
+            this.Line = new List<Line>();
+
+        }
         public int Id { get; set; }
        
         public DateTime Date { get; set; }

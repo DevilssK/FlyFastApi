@@ -93,3 +93,6 @@ C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.A
 C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\obj\Release\FlyFast.API.csproj.CopyComplete
 C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\obj\Release\FlyFast.API.dll
 C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\obj\Release\FlyFast.API.pdb
+C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\bin\System.Web.Cors.dll
+C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\bin\System.Web.Http.Cors.dll
+C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\bin\System.Web.Http.Cors.xml
