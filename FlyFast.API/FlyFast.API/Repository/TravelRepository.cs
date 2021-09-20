@@ -6,11 +6,11 @@ using System.Web;
 
 namespace FlyFast.API.Repository
 {
-    public  class TravelRepository : IDisposable
+    public class TravelRepository : IDisposable
     {
         public void Dispose()
         {
-            
+
         }
 
         public void LoadData()
@@ -94,7 +94,13 @@ namespace FlyFast.API.Repository
                 Plane = plane5
             });
         }
-        public  List<Trip> GetTravels()
+
+        public void AddCustomerInPlane(Customer customer, Trip trip) { 
+            trip.Plane.Customers.Add(customer); 
+        }
+
+
+        public List<Trip> GetTravels()
         {
             List<Trip> trips = new List<Trip>();
 

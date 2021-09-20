@@ -12,19 +12,28 @@ namespace FlyFast.API.Controllers
     public class TravelController : ApiController
     {
 
+        TravelRepository _repository = new TravelRepository();
+
         [HttpGet]
         [Route("Travels")]
         public List<Trip> GetListOfTravel()
         {
             List<Trip> trips = new List<Trip>();
 
-            using (TravelRepository travelRepository = new TravelRepository ())
-            {
-                trips = travelRepository.GetTravels();
-            }
+            trips = _repository.GetTravels();
+
             return trips;
         }
 
-         
+        [HttpPost]
+        [Route("Book")]
+        public bool PostReservation(string customerName, int tripId)
+        {
+            Customer customer = new Customer();
+            customer.Name = customerName;
+            Trip trip = CACHE.Trips.Where(x => x.Id == tripId).FirstOrDefault();
+            _repository.AddCustomerInPlane(customer, trip);
+            return true;
+        }
     }
 }
