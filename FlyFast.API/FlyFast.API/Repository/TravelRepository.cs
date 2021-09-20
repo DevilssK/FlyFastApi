@@ -16,11 +16,23 @@ namespace FlyFast.API.Repository
         public void LoadData()
         {
             var plane = new Plane();
+            plane.Places = 300;
+
             var plane1 = new Plane();
+            plane.Places = 300;
+
             var plane2 = new Plane();
+            plane.Places = 700;
+
             var plane3 = new Plane();
+            plane.Places = 700;
+
             var plane4 = new Plane();
+            plane.Places = 1000;
+
             var plane5 = new Plane();
+            plane.Places = 1000;
+
             int i = 1;
             CACHE.Trips.Add(new Trip()
             {
