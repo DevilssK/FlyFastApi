@@ -25,8 +25,8 @@ namespace FlyFast.API.Repository
             CACHE.Trips.Add(new Trip()
             {
                 Id = i,
-                Departure = AIRPORT.DTW,
-                Arrived = AIRPORT.JFK,
+                Departure = AIRPORT.DTW.ToString(),
+                Arrived = AIRPORT.JFK.ToString(),
                 Date = DateTime.Now.AddDays(5),
                 Plane = plane
             });
@@ -35,8 +35,8 @@ namespace FlyFast.API.Repository
             CACHE.Trips.Add(new Trip()
             {
                 Id = i,
-                Departure = AIRPORT.JFK,
-                Arrived = AIRPORT.DTW,
+                Departure = AIRPORT.JFK.ToString(),
+                Arrived = AIRPORT.DTW.ToString(),
                 Date = DateTime.Now.AddDays(5),
                 Plane = plane1
             });
@@ -45,8 +45,8 @@ namespace FlyFast.API.Repository
             CACHE.Trips.Add(new Trip()
             {
                 Id = i,
-                Departure = AIRPORT.CDG,
-                Arrived = AIRPORT.DTW,
+                Departure = AIRPORT.CDG.ToString(),
+                Arrived = AIRPORT.DTW.ToString(),
                 Date = DateTime.Now.AddDays(5),
                 Plane = plane2
             });
@@ -55,8 +55,8 @@ namespace FlyFast.API.Repository
             CACHE.Trips.Add(new Trip()
             {
                 Id = i,
-                Departure = AIRPORT.DTW,
-                Arrived = AIRPORT.CDG,
+                Departure = AIRPORT.DTW.ToString(),
+                Arrived = AIRPORT.CDG.ToString(),
                 Date = DateTime.Now.AddDays(5),
                 Plane = plane3
             });
@@ -66,8 +66,8 @@ namespace FlyFast.API.Repository
             CACHE.Trips.Add(new Trip()
             {
                 Id = i,
-                Departure = AIRPORT.JFK,
-                Arrived = AIRPORT.CDG,
+                Departure = AIRPORT.JFK.ToString(),
+                Arrived = AIRPORT.CDG.ToString(),
                 Date = DateTime.Now.AddDays(5),
                 Plane = plane4
             });
@@ -76,8 +76,8 @@ namespace FlyFast.API.Repository
             CACHE.Trips.Add(new Trip()
             {
                 Id = i,
-                Departure = AIRPORT.CDG,
-                Arrived = AIRPORT.JFK,
+                Departure = AIRPORT.CDG.ToString(),
+                Arrived = AIRPORT.JFK.ToString(),
                 Date = DateTime.Now.AddDays(5),
                 Plane = plane5
             });
