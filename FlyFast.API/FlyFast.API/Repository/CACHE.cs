@@ -10,10 +10,10 @@ namespace FlyFast.API.Repository
     {
         public CACHE()
         {
-            Orders = new List<Trip>();
+            Trips = new List<Trip>();
 
             // Fake Data
         }
-        public static List<Trip> Orders = null;
+        public static List<Trip> Trips = null;
     }
 }

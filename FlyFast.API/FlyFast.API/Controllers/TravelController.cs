@@ -1,4 +1,5 @@
 ﻿using FlyFast.API.Models;
+using FlyFast.API.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,15 @@ namespace FlyFast.API.Controllers
     {
 
         [HttpGet]
+        [Route("Travels")]
         public List<Trip> GetListOfTravel()
         {
             List<Trip> trips = new List<Trip>();
 
+            using (TravelRepository travelRepository = new TravelRepository ())
+            {
+                trips = travelRepository.GetTravels();
+            }
             return trips;
         }
 
