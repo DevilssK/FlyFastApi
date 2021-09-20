@@ -12,7 +12,7 @@ namespace FlyFast.API.Models
             this.Customers = new List<Customer>();
         }
 
-
+        public int IdPlane { get; set; }
         public Int32 MaxPlaces { get; set; }
         public List<Customer> Customers { get; set; }
     }

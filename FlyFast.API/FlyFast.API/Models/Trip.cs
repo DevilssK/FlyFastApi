@@ -18,18 +18,18 @@ namespace FlyFast.API.Models
 
         public List<Line> Line { get; set; }      
 
-        public float PriceFirstClass { get; set; }
-        private float _priceSecondClass;
+        //public float PriceFirstClass { get; set; }
+        //private float _priceSecondClass;
 
-        public float PriceSecondClass
-        {
-            get { return _priceSecondClass; }
-            set
-            {
-                _priceSecondClass = value;
-                this.PriceFirstClass = this.PriceSecondClass * 2;
-            }
-        }
+        //public float PriceSecondClass
+        //{
+        //    get { return _priceSecondClass; }
+        //    set
+        //    {
+        //        _priceSecondClass = value;
+        //        this.PriceFirstClass = this.PriceSecondClass * 2;
+        //    }
+        //}
 
 
     }

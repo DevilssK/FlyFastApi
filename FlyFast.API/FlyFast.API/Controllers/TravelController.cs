@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
-using System.Web.Http.Cors;
 
 namespace FlyFast.API.Controllers
 {
@@ -25,6 +24,18 @@ namespace FlyFast.API.Controllers
 
             return trips;
         }
+
+        [HttpGet]
+        [Route("Line")]
+        public List<Trip> GetListOfLine()
+        {
+            List<Trip> trips = new List<Trip>();
+
+            trips = _repository.GetTravels();
+
+            return trips;
+        }
+
 
         [HttpPost]
         [Route("Book")]

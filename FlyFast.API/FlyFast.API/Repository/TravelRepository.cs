@@ -43,12 +43,12 @@ namespace FlyFast.API.Repository
                   {
                     Departure = AIRPORT.DTW,
                     Arrived = AIRPORT.JFK,
-                    Plane = plane
+                    Plane = plane,
+                    Price = 300
                   }
                 }
                ,
                 Date = DateTime.Now.AddDays(5),
-                PriceSecondClass = 300
             });
 
             i++;
@@ -61,11 +61,11 @@ namespace FlyFast.API.Repository
                   {
                     Departure = AIRPORT.JFK,
                     Arrived = AIRPORT.DTW,
-                    Plane = plane
+                    Plane = plane,
+                    Price = 300
                   }
                 },
                 Date = DateTime.Now.AddDays(5),
-                PriceSecondClass = 300,
 
             });
 
@@ -79,11 +79,11 @@ namespace FlyFast.API.Repository
                   {
                     Departure = AIRPORT.CDG,
                     Arrived = AIRPORT.DTW,
-                    Plane = plane
+                    Plane = plane,
+                    Price = 700
                   }
                 },
-                Date = DateTime.Now.AddDays(5),
-                PriceSecondClass = 700,
+                Date = DateTime.Now.AddDays(5)
             });
 
             i++;
@@ -96,11 +96,11 @@ namespace FlyFast.API.Repository
                   {
                     Departure = AIRPORT.DTW,
                     Arrived = AIRPORT.CDG,
-                    Plane = plane
+                    Plane = plane,
+                    Price = 700
                   }
                 },
                 Date = DateTime.Now.AddDays(5),
-                PriceSecondClass = 700,
             });
 
             i++;
@@ -114,11 +114,11 @@ namespace FlyFast.API.Repository
                   {
                     Departure = AIRPORT.JFK,
                     Arrived = AIRPORT.CDG,
-                    Plane = plane
+                    Plane = plane,
+                    Price = 1000
                   }
                 },
                 Date = DateTime.Now.AddDays(5),
-                PriceSecondClass = 1000,
             });
 
             i++;
@@ -131,11 +131,11 @@ namespace FlyFast.API.Repository
                   {
                     Departure = AIRPORT.CDG,
                     Arrived = AIRPORT.JFK,
-                    Plane = plane
+                    Plane = plane,
+                    Price = 1000
                   }
                 },
                 Date = DateTime.Now.AddDays(5),
-                PriceSecondClass = 1000,
             });
         }
 
@@ -165,19 +165,19 @@ namespace FlyFast.API.Repository
             return trips;
         }
 
-        public int PlacesInvalibility(Trip trip)
-        {
-            //int places = trip.Plane.MaxPlaces - trip.Plane.Customers.Count;
-            return 0;
+        //public int PlacesInvalibility(Trip trip)
+        //{
+        //    int places = trip.Plane.MaxPlaces - trip.Plane.Customers.Count;
+        //    return places;
 
-        }
+        //}
 
-        public int FirstClassInvalibility(TICKET_TYPE type, Trip trip)
-        {
-            //int firstclassCustomers = trip.Plane.Customers.Where(x => x.TICKET_TYPE == TICKET_TYPE.FIRST_CLASS).Count();
-           // int firstClassPlaces = Convert.ToInt32(trip.Plane.MaxPlaces * 0.10);
+        //public int FirstClassInvalibility(TICKET_TYPE type, Trip trip)
+        //{
+        //    int firstclassCustomers = trip.Plane.Customers.Where(x => x.TICKET_TYPE == TICKET_TYPE.FIRST_CLASS).Count();
+        //    int firstClassPlaces = Convert.ToInt32(trip.Plane.MaxPlaces * 0.10);
 
-            return 0;
-        }
+        //    return firstClassPlaces - firstclassCustomers;
+        //}
     }
 }
