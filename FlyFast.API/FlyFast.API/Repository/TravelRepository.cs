@@ -164,7 +164,7 @@ namespace FlyFast.API.Repository
 
         }
 
-        internal void CreateOrder(int tripId , Customer customer)
+        internal void CreateOrder(int tripId , Customer customer, TICKET_TYPE type)
         {
             List<Line> lines = CACHE.Trips.Where(x => x.Id == tripId).FirstOrDefault().Line;
 
@@ -174,7 +174,15 @@ namespace FlyFast.API.Repository
                 
                 foreach(Line item in lines)
                 {
-                    price += item.Price;
+                    switch (type) {
+                        case (TICKET_TYPE.SECOND_CLASS):
+                            price += item.Price;
+                            break;
+                        case (TICKET_TYPE.FIRST_CLASS):
+                            price += item.Price * 2;
+                            break;
+                    }
+               
                 }
 
                 price =  price * 0.85f;
