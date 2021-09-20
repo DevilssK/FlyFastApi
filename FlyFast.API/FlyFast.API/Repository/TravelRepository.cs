@@ -17,7 +17,7 @@ namespace FlyFast.API.Repository
         {
             var plane = new Plane();
             plane.MaxPlaces = 300;
-            plane.NbrPlaceFirstClass = 0;
+            plane.NbrPlaceFirstClass = Convert.ToInt32(plane.MaxPlaces * 0.1F);
 
 
             var plane6 = new Plane();
@@ -26,7 +26,7 @@ namespace FlyFast.API.Repository
 
             var plane1 = new Plane();
             plane1.MaxPlaces = 300;
-            plane1.NbrPlaceFirstClass = Convert.ToInt32(plane1.MaxPlaces * 0.1F);
+            plane1.NbrPlaceFirstClass = 0;
 
           var plane2 = new Plane();
             plane2.MaxPlaces = 700;

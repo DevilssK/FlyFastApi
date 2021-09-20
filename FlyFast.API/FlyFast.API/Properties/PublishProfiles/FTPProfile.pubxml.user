@@ -80,22 +80,22 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, visitez https:
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
     <File Include="bin/FlyFast.API.dll">
-      <publishTime>09/20/2021 15:50:43</publishTime>
+      <publishTime>09/20/2021 17:06:48</publishTime>
     </File>
     <File Include="bin/FlyFast.API.pdb">
-      <publishTime>09/20/2021 15:50:43</publishTime>
+      <publishTime>09/20/2021 17:06:48</publishTime>
     </File>
     <File Include="bin/fr/System.Net.Http.Formatting.resources.dll">
-      <publishTime>11/28/2018 12:00:48</publishTime>
+      <publishTime>11/28/2018 13:00:48</publishTime>
     </File>
     <File Include="bin/fr/System.Web.Helpers.resources.dll">
-      <publishTime>11/28/2018 12:04:38</publishTime>
+      <publishTime>11/28/2018 13:04:38</publishTime>
     </File>
     <File Include="bin/fr/System.Web.Http.resources.dll">
-      <publishTime>11/28/2018 12:01:14</publishTime>
+      <publishTime>11/28/2018 13:01:14</publishTime>
     </File>
     <File Include="bin/fr/System.Web.Http.WebHost.resources.dll">
-      <publishTime>11/28/2018 12:03:06</publishTime>
+      <publishTime>11/28/2018 13:03:06</publishTime>
     </File>
     <File Include="bin/fr/System.Web.Mvc.resources.dll">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -104,16 +104,19 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, visitez https:
       <publishTime>02/11/2014 14:28:42</publishTime>
     </File>
     <File Include="bin/fr/System.Web.Razor.resources.dll">
-      <publishTime>11/28/2018 12:00:24</publishTime>
+      <publishTime>11/28/2018 13:00:24</publishTime>
     </File>
     <File Include="bin/fr/System.Web.WebPages.Deployment.resources.dll">
-      <publishTime>11/28/2018 12:04:38</publishTime>
+      <publishTime>11/28/2018 13:04:38</publishTime>
     </File>
     <File Include="bin/fr/System.Web.WebPages.Razor.resources.dll">
-      <publishTime>11/28/2018 12:04:38</publishTime>
+      <publishTime>11/28/2018 13:04:38</publishTime>
     </File>
     <File Include="bin/fr/System.Web.WebPages.resources.dll">
-      <publishTime>11/28/2018 12:04:38</publishTime>
+      <publishTime>11/28/2018 13:04:38</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>10/19/2020 06:40:10</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>09/05/2018 16:10:50</publishTime>
@@ -182,7 +185,7 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, visitez https:
       <publishTime>11/05/2016 17:55:34</publishTime>
     </File>
     <File Include="bin/roslyn/System.Collections.Immutable.dll">
-      <publishTime>05/16/2018 03:29:34</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/roslyn/System.Console.dll">
       <publishTime>11/05/2016 17:55:48</publishTime>
@@ -218,7 +221,7 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, visitez https:
       <publishTime>11/05/2016 17:56:34</publishTime>
     </File>
     <File Include="bin/roslyn/System.Reflection.Metadata.dll">
-      <publishTime>05/16/2018 03:29:44</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/roslyn/System.Runtime.InteropServices.RuntimeInformation.dll">
       <publishTime>11/05/2016 17:57:00</publishTime>
@@ -401,7 +404,7 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, visitez https:
       <publishTime>09/17/2021 17:45:03</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/20/2021 14:59:46</publishTime>
+      <publishTime>09/20/2021 17:00:03</publishTime>
     </File>
   </ItemGroup>
 </Project>
