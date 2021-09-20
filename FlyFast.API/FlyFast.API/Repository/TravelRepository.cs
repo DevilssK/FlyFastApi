@@ -237,6 +237,45 @@ namespace FlyFast.API.Repository
 
         public void AddCustomerInPlane(Customer customer, Trip trip)
         {
+            List<Line> lines = CACHE.Trips.Where(x => x.Id == tripId).FirstOrDefault().Line;
+
+            float price = 0;
+            if(lines.Count > 1)
+            {
+                
+                foreach(Line item in lines)
+                {
+                    switch (type) {
+                        case (TICKET_TYPE.SECOND_CLASS):
+                            price += item.Price;
+                            break;
+                        case (TICKET_TYPE.FIRST_CLASS):
+                            price += item.Price * 2;
+                            break;
+                    }
+               
+                }
+
+                price =  price * 0.85f;
+            }
+            else
+            {
+                price = lines.FirstOrDefault().Price;
+            }
+
+
+            CACHE.Orders.Add(new Order()
+            {
+                price = price,
+                date = DateTime.Now,
+                trip = CACHE.Trips.Where(x=> x.Id == tripId).FirstOrDefault(),
+                customer = customer
+            });
+
+        }
+
+        public void AddCustomerInPlane(Customer customer, Trip trip)
+        {
             // trip.Line.Customers.Add(customer);
         }
 
