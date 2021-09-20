@@ -14,6 +14,7 @@ namespace FlyFast.API.Models
 
         public int IdPlane { get; set; }
         public Int32 MaxPlaces { get; set; }
+        public int NbrPlaceFirstClass { get; set; }
         public List<Customer> Customers { get; set; }
     }
 }

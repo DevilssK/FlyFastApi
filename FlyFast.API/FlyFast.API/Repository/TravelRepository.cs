@@ -17,21 +17,32 @@ namespace FlyFast.API.Repository
         {
             var plane = new Plane();
             plane.MaxPlaces = 300;
+            plane.NbrPlaceFirstClass = 0;
+
+
+            var plane6 = new Plane();
+            plane6.MaxPlaces = 1000;
+            plane6.NbrPlaceFirstClass = Convert.ToInt32(plane6.MaxPlaces * 0.1F);
 
             var plane1 = new Plane();
-            plane.MaxPlaces = 300;
+            plane1.MaxPlaces = 300;
+            plane1.NbrPlaceFirstClass = Convert.ToInt32(plane1.MaxPlaces * 0.1F);
 
-            var plane2 = new Plane();
-            plane.MaxPlaces = 700;
+          var plane2 = new Plane();
+            plane2.MaxPlaces = 700;
+            plane2.NbrPlaceFirstClass = Convert.ToInt32(plane2.MaxPlaces * 0.1F);
 
             var plane3 = new Plane();
-            plane.MaxPlaces = 700;
+            plane3.MaxPlaces = 700;
+            plane3.NbrPlaceFirstClass = Convert.ToInt32(plane3.MaxPlaces * 0.1F);
 
             var plane4 = new Plane();
-            plane.MaxPlaces = 1000;
+            plane4.MaxPlaces = 1000;
+            plane4.NbrPlaceFirstClass = Convert.ToInt32(plane4.MaxPlaces * 0.1F);
 
             var plane5 = new Plane();
-            plane.MaxPlaces = 1000;
+            plane5.MaxPlaces = 1000;
+            plane5.NbrPlaceFirstClass = Convert.ToInt32(plane5.MaxPlaces * 0.1F);
 
             int i = 1;
             CACHE.Trips.Add(new Trip()
@@ -53,7 +64,7 @@ namespace FlyFast.API.Repository
                          Id= 2,
                     Departure = AIRPORT.JFK,
                     Arrived = AIRPORT.CDG,
-                    Plane = plane,
+                    Plane = plane6,
                     Price = 300,
                      Date = DateTime.Now.AddDays(6)
                   }
@@ -73,7 +84,7 @@ namespace FlyFast.API.Repository
                          Id= 3,
                     Departure = AIRPORT.JFK,
                     Arrived = AIRPORT.DTW,
-                    Plane = plane,
+                    Plane = plane1,
                     Price = 300,
                        Date = DateTime.Now.AddDays(5)
                   }
@@ -93,7 +104,7 @@ namespace FlyFast.API.Repository
                          Id= 4,
                     Departure = AIRPORT.CDG,
                     Arrived = AIRPORT.DTW,
-                    Plane = plane,
+                    Plane = plane2,
                     Price = 700,
                        Date = DateTime.Now.AddDays(5)
                   }
@@ -112,7 +123,7 @@ namespace FlyFast.API.Repository
                          Id= 5,
                     Departure = AIRPORT.DTW,
                     Arrived = AIRPORT.CDG,
-                    Plane = plane,
+                    Plane = plane3,
                     Price = 700,
                        Date = DateTime.Now.AddDays(5)
                   }
@@ -132,7 +143,7 @@ namespace FlyFast.API.Repository
                          Id= 6,
                     Departure = AIRPORT.JFK,
                     Arrived = AIRPORT.CDG,
-                    Plane = plane,
+                    Plane = plane4,
                     Price = 1000,
                        Date = DateTime.Now.AddDays(5)
                   }
@@ -151,7 +162,7 @@ namespace FlyFast.API.Repository
                          Id= 7,
                     Departure = AIRPORT.CDG,
                     Arrived = AIRPORT.JFK,
-                    Plane = plane,
+                    Plane = plane5,
                     Price = 1000,
                        Date = DateTime.Now.AddDays(5)
                   }
