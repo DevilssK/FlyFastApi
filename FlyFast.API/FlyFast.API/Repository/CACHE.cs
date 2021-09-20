@@ -16,6 +16,8 @@ namespace FlyFast.API.Repository
         }
         public static List<Trip> Trips = new List<Trip> ();
 
+        public static List<Order> Orders = new List<Order>();
+
         internal static void LoadData()
         {
             using (TravelRepository travelRepository =  new TravelRepository ())
