@@ -92,3 +92,4 @@ C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.A
 C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\obj\Debug\FlyFast.API.csproj.CopyComplete
 C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\obj\Debug\FlyFast.API.dll
 C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\obj\Debug\FlyFast.API.pdb
+C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\obj\Debug\FlyFast.API.csprojAssemblyReference.cache
