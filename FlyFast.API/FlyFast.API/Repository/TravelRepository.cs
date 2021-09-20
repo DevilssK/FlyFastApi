@@ -3,22 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Http;
 
-namespace FlyFast.API.Controllers
+namespace FlyFast.API.Repository
 {
-    [Route("api/[controller]")]
-    public class TravelController : ApiController
+    public  class TravelRepository
     {
-
-        [HttpGet]
-        public List<Trip> GetListOfTravel()
+        public  List<Trip> GetTravels()
         {
             List<Trip> trips = new List<Trip>();
 
             return trips;
         }
-
-         
     }
 }

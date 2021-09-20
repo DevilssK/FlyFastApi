@@ -10,7 +10,7 @@ namespace FlyFast.API.Models
         public AIRPORT Departure { get; set; }
         public AIRPORT Arrived { get; set; }
         public DateTime Date { get; set; }
-        public double Price { get; set; }
+        //public double Price { get; set; }
         public Plane Plane { get; set; }
 
     }
