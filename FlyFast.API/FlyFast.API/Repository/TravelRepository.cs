@@ -16,22 +16,22 @@ namespace FlyFast.API.Repository
         public void LoadData()
         {
             var plane = new Plane();
-            plane.Places = 300;
+            plane.MaxPlaces = 300;
 
             var plane1 = new Plane();
-            plane.Places = 300;
+            plane.MaxPlaces = 300;
 
             var plane2 = new Plane();
-            plane.Places = 700;
+            plane.MaxPlaces = 700;
 
             var plane3 = new Plane();
-            plane.Places = 700;
+            plane.MaxPlaces = 700;
 
             var plane4 = new Plane();
-            plane.Places = 1000;
+            plane.MaxPlaces = 1000;
 
             var plane5 = new Plane();
-            plane.Places = 1000;
+            plane.MaxPlaces = 1000;
 
             int i = 1;
             CACHE.Trips.Add(new Trip()
@@ -40,7 +40,8 @@ namespace FlyFast.API.Repository
                 Departure = AIRPORT.DTW.ToString(),
                 Arrived = AIRPORT.JFK.ToString(),
                 Date = DateTime.Now.AddDays(5),
-                Plane = plane
+                Plane = plane,
+                PriceSecondClass = 300
             });
 
             i++;
@@ -50,7 +51,9 @@ namespace FlyFast.API.Repository
                 Departure = AIRPORT.JFK.ToString(),
                 Arrived = AIRPORT.DTW.ToString(),
                 Date = DateTime.Now.AddDays(5),
-                Plane = plane1
+                Plane = plane1,
+                PriceSecondClass = 300,
+
             });
 
             i++;
@@ -60,7 +63,8 @@ namespace FlyFast.API.Repository
                 Departure = AIRPORT.CDG.ToString(),
                 Arrived = AIRPORT.DTW.ToString(),
                 Date = DateTime.Now.AddDays(5),
-                Plane = plane2
+                Plane = plane2,
+                PriceSecondClass = 700,
             });
 
             i++;
@@ -70,7 +74,8 @@ namespace FlyFast.API.Repository
                 Departure = AIRPORT.DTW.ToString(),
                 Arrived = AIRPORT.CDG.ToString(),
                 Date = DateTime.Now.AddDays(5),
-                Plane = plane3
+                Plane = plane3,
+                PriceSecondClass = 700,
             });
 
             i++;
@@ -81,7 +86,8 @@ namespace FlyFast.API.Repository
                 Departure = AIRPORT.JFK.ToString(),
                 Arrived = AIRPORT.CDG.ToString(),
                 Date = DateTime.Now.AddDays(5),
-                Plane = plane4
+                Plane = plane4,
+                PriceSecondClass = 1000,
             });
 
             i++;
@@ -91,7 +97,8 @@ namespace FlyFast.API.Repository
                 Departure = AIRPORT.CDG.ToString(),
                 Arrived = AIRPORT.JFK.ToString(),
                 Date = DateTime.Now.AddDays(5),
-                Plane = plane5
+                Plane = plane5,
+                PriceSecondClass = 1000,
             });
         }
 

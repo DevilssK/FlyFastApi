@@ -1,3 +1,4 @@
+C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\obj\Debug\FlyFast.API.csproj.CoreCompileInputs.cache
 C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\bin\FlyFast.API.dll.config
 C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\bin\FlyFast.API.dll
 C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\bin\FlyFast.API.pdb
@@ -88,8 +89,6 @@ C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.A
 C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\bin\fr\System.Web.WebPages.resources.dll
 C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\bin\fr\System.Web.WebPages.Deployment.resources.dll
 C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\bin\fr\System.Web.WebPages.Razor.resources.dll
-C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\obj\Debug\FlyFast.API.csprojAssemblyReference.cache
-C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\obj\Debug\FlyFast.API.csproj.CoreCompileInputs.cache
 C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\obj\Debug\FlyFast.API.csproj.CopyComplete
 C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\obj\Debug\FlyFast.API.dll
 C:\Users\didim\OneDrive\Documents\INTECH\SEMESTRE 10\Architect\DEV\API\FlyFast.API\FlyFast.API\obj\Debug\FlyFast.API.pdb
