@@ -1,4 +1,4 @@
-﻿using FlyFast.API.Models;
+using FlyFast.API.Models;
 using FlyFast.API.Repository;
 using System;
 using System.Collections.Generic;
@@ -29,6 +29,17 @@ namespace FlyFast.API.Controllers
         [HttpPost]
         [Route("Book")]
         public bool PostReservation(string customerName, int tripId)
+        {
+            Customer customer = new Customer();
+            customer.Name = customerName;
+            Trip trip = CACHE.Trips.Where(x => x.Id == tripId).FirstOrDefault();
+            _repository.AddCustomerInPlane(customer, trip);
+            return true;
+        }
+
+        [HttpPost]
+        [Route("Order")]
+        public bool PostOrder(string customerName, int tripId)
         {
             Customer customer = new Customer();
             customer.Name = customerName;

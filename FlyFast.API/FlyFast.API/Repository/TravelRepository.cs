@@ -141,7 +141,11 @@ namespace FlyFast.API.Repository
 
         public void AddCustomerInPlane(Customer customer, Trip trip)
         {
-           // trip.Line.Customers.Add(customer);
+            foreach(Line item in trip.Line)
+            {
+                item.Plane.Customers.Add(customer);
+            }
+
         }
 
 
