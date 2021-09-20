@@ -10,10 +10,18 @@ namespace FlyFast.API.Repository
     {
         public CACHE()
         {
-            Trips = new List<Trip>();
-
             // Fake Data
+
+           
         }
-        public static List<Trip> Trips = null;
+        public static List<Trip> Trips = new List<Trip> ();
+
+        internal static void LoadData()
+        {
+            using (TravelRepository travelRepository =  new TravelRepository ())
+            {
+                travelRepository.LoadData();
+            }
+        }
     }
 }

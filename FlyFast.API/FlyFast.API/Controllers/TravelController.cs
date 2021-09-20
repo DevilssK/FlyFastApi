@@ -8,7 +8,7 @@ using System.Web.Http;
 
 namespace FlyFast.API.Controllers
 {
-    [Route("api/[controller]")]
+
     public class TravelController : ApiController
     {
 

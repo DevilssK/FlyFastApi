@@ -13,6 +13,75 @@ namespace FlyFast.API.Repository
             
         }
 
+        public void LoadData()
+        {
+            var plane = new Plane();
+            var plane1 = new Plane();
+            var plane2 = new Plane();
+            var plane3 = new Plane();
+            var plane4 = new Plane();
+            var plane5 = new Plane();
+            int i = 1;
+            CACHE.Trips.Add(new Trip()
+            {
+                Id = i,
+                Departure = AIRPORT.DTW,
+                Arrived = AIRPORT.JFK,
+                Date = DateTime.Now.AddDays(5),
+                Plane = plane
+            });
+
+            i++;
+            CACHE.Trips.Add(new Trip()
+            {
+                Id = i,
+                Departure = AIRPORT.JFK,
+                Arrived = AIRPORT.DTW,
+                Date = DateTime.Now.AddDays(5),
+                Plane = plane1
+            });
+
+            i++;
+            CACHE.Trips.Add(new Trip()
+            {
+                Id = i,
+                Departure = AIRPORT.CDG,
+                Arrived = AIRPORT.DTW,
+                Date = DateTime.Now.AddDays(5),
+                Plane = plane2
+            });
+
+            i++;
+            CACHE.Trips.Add(new Trip()
+            {
+                Id = i,
+                Departure = AIRPORT.DTW,
+                Arrived = AIRPORT.CDG,
+                Date = DateTime.Now.AddDays(5),
+                Plane = plane3
+            });
+
+            i++;
+
+            CACHE.Trips.Add(new Trip()
+            {
+                Id = i,
+                Departure = AIRPORT.JFK,
+                Arrived = AIRPORT.CDG,
+                Date = DateTime.Now.AddDays(5),
+                Plane = plane4
+            });
+
+            i++;
+            CACHE.Trips.Add(new Trip()
+            {
+                Id = i,
+                Departure = AIRPORT.CDG,
+                Arrived = AIRPORT.JFK,
+                Date = DateTime.Now.AddDays(5),
+                Plane = plane5
+            });
+        }
         public  List<Trip> GetTravels()
         {
             List<Trip> trips = new List<Trip>();

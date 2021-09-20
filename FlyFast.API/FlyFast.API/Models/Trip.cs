@@ -6,7 +6,8 @@ using System.Web;
 namespace FlyFast.API.Models
 {
     public class Trip
-    {        
+    {
+        public int Id { get; set; }
         public AIRPORT Departure { get; set; }
         public AIRPORT Arrived { get; set; }
         public DateTime Date { get; set; }
