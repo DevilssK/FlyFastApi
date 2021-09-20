@@ -37,8 +37,11 @@ namespace FlyFast.API.Repository
             CACHE.Trips.Add(new Trip()
             {
                 Id = i,
-                Departure = AIRPORT.DTW.ToString(),
-                Arrived = AIRPORT.JFK.ToString(),
+                Line = new Line
+                {
+                    Departure = AIRPORT.DTW,
+                    Arrived = AIRPORT.JFK
+                },
                 Date = DateTime.Now.AddDays(5),
                 Plane = plane,
                 PriceSecondClass = 300
@@ -48,8 +51,11 @@ namespace FlyFast.API.Repository
             CACHE.Trips.Add(new Trip()
             {
                 Id = i,
-                Departure = AIRPORT.JFK.ToString(),
-                Arrived = AIRPORT.DTW.ToString(),
+                Line = new Line
+                {
+                    Departure = AIRPORT.JFK,
+                    Arrived = AIRPORT.DTW
+                },
                 Date = DateTime.Now.AddDays(5),
                 Plane = plane1,
                 PriceSecondClass = 300,
@@ -60,8 +66,11 @@ namespace FlyFast.API.Repository
             CACHE.Trips.Add(new Trip()
             {
                 Id = i,
-                Departure = AIRPORT.CDG.ToString(),
-                Arrived = AIRPORT.DTW.ToString(),
+                Line = new Line
+                {
+                    Departure = AIRPORT.CDG,
+                    Arrived = AIRPORT.DTW
+                },
                 Date = DateTime.Now.AddDays(5),
                 Plane = plane2,
                 PriceSecondClass = 700,
@@ -71,8 +80,11 @@ namespace FlyFast.API.Repository
             CACHE.Trips.Add(new Trip()
             {
                 Id = i,
-                Departure = AIRPORT.DTW.ToString(),
-                Arrived = AIRPORT.CDG.ToString(),
+                Line = new Line
+                {
+                    Departure = AIRPORT.DTW,
+                    Arrived = AIRPORT.CDG
+                },
                 Date = DateTime.Now.AddDays(5),
                 Plane = plane3,
                 PriceSecondClass = 700,
@@ -83,8 +95,11 @@ namespace FlyFast.API.Repository
             CACHE.Trips.Add(new Trip()
             {
                 Id = i,
-                Departure = AIRPORT.JFK.ToString(),
-                Arrived = AIRPORT.CDG.ToString(),
+                Line = new Line
+                {
+                    Departure = AIRPORT.JFK,
+                    Arrived = AIRPORT.CDG
+                },
                 Date = DateTime.Now.AddDays(5),
                 Plane = plane4,
                 PriceSecondClass = 1000,
@@ -94,16 +109,20 @@ namespace FlyFast.API.Repository
             CACHE.Trips.Add(new Trip()
             {
                 Id = i,
-                Departure = AIRPORT.CDG.ToString(),
-                Arrived = AIRPORT.JFK.ToString(),
+                Line = new Line
+                {
+                    Departure = AIRPORT.CDG,
+                    Arrived = AIRPORT.JFK
+                },
                 Date = DateTime.Now.AddDays(5),
                 Plane = plane5,
                 PriceSecondClass = 1000,
             });
         }
 
-        public void AddCustomerInPlane(Customer customer, Trip trip) { 
-            trip.Plane.Customers.Add(customer); 
+        public void AddCustomerInPlane(Customer customer, Trip trip)
+        {
+            trip.Plane.Customers.Add(customer);
         }
 
 

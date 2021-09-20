@@ -163,6 +163,7 @@
     </Compile>
     <Compile Include="Models\AIRPORT.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Line.cs" />
     <Compile Include="Models\Plane.cs" />
     <Compile Include="Models\TICKET_TYPE.cs" />
     <Compile Include="Models\Trip.cs" />

@@ -80,10 +80,10 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, visitez https:
       <publishTime>10/09/2013 16:29:20</publishTime>
     </File>
     <File Include="bin/FlyFast.API.dll">
-      <publishTime>09/20/2021 11:44:43</publishTime>
+      <publishTime>09/20/2021 12:09:28</publishTime>
     </File>
     <File Include="bin/FlyFast.API.pdb">
-      <publishTime>09/20/2021 11:44:43</publishTime>
+      <publishTime>09/20/2021 12:09:28</publishTime>
     </File>
     <File Include="bin/fr/System.Net.Http.Formatting.resources.dll">
       <publishTime>11/28/2018 12:00:48</publishTime>
