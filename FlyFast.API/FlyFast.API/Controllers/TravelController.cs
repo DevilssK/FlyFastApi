@@ -101,7 +101,7 @@ namespace FlyFast.API.Controllers
             Customer customer = new Customer();
             customer.Name = reservation.customerName;
             Trip trip = CACHE.Trips.Where(x => x.Id == reservation.tripId).FirstOrDefault();
-            _repository.AddCustomerInPlane(customer, trip);
+            _repository.AddCustomerInPlane(customer, trip , reservation.ticketTypes);
             return true;
         }
     }
