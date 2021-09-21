@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FlyFast.API.Models
+namespace FlyFast.API.Models.ViewModels
 {
-    public class Customer
+    public class UserLineViewModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public int LineId { get; set; }
         public TICKET_TYPE TickerType { get; set; }
+       
     }
 }
