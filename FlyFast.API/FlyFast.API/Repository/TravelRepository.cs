@@ -201,26 +201,29 @@ namespace FlyFast.API.Repository
 
         }
 
-        internal void CreateOrder(int tripId, Customer customer, TICKET_TYPE type)
+        internal void CreateOrder(int tripId , Customer customer, List<TICKET_TYPE> ticketType)
         {
+
+
             List<Line> lines = CACHE.Trips.Where(x => x.Id == tripId).FirstOrDefault().Line;
 
             float price = 0;
             if (lines.Count > 1)
             {
-
-                foreach (Line item in lines)
+                for (int i = 0; i < lines.Count; i++)
                 {
-                    switch (type)
+                    switch (ticketType[i])
                     {
                         case (TICKET_TYPE.SECOND_CLASS):
-                            price += item.Price;
+                            price += lines[i].Price;
+                            AddCustomerInPlane(customer, lines[i].Plane , ticketType[i]);
+
                             break;
                         case (TICKET_TYPE.FIRST_CLASS):
-                            price += item.Price * 2;
+                            price += lines[i].Price * 2;
+                            AddCustomerInPlane(customer, lines[i].Plane, ticketType[i]);
                             break;
                     }
-
                 }
 
                 price = price * 0.85f;
@@ -228,6 +231,7 @@ namespace FlyFast.API.Repository
             else
             {
                 price = lines.FirstOrDefault().Price;
+                AddCustomerInPlane(customer, lines.FirstOrDefault().Plane, ticketType.FirstOrDefault());
             }
 
 
@@ -238,53 +242,19 @@ namespace FlyFast.API.Repository
                 trip = CACHE.Trips.Where(x => x.Id == tripId).FirstOrDefault(),
                 customer = customer
             });
-
         }
 
-        public void AddCustomerInPlane(Customer customer, Trip trip)
+        public void AddCustomerInPlane(Customer customer, Plane plane , TICKET_TYPE type)
         {
-            List<Line> lines = CACHE.Trips.Where(x => x.Id == trip.Id).FirstOrDefault().Line;
-
-            float price = 0;
-            if (lines.Count > 1)
+            if (type == TICKET_TYPE.FIRST_CLASS )
             {
-
-                foreach (Line item in lines)
-                {
-                    switch (customer.TickerType)
-                    {
-                        case (TICKET_TYPE.SECOND_CLASS):
-                            price += item.Price;
-                            break;
-                        case (TICKET_TYPE.FIRST_CLASS):
-                            price += item.Price * 2;
-                            break;
-                    }
-
-                }
-
-                price = price * 0.85f;
+                int leftPlaces = FirstClassInvalibility(plane);
+                if(leftPlaces > 0 )
+                plane.Customers.Add(customer);
             }
-            else
-            {
-                price = lines.FirstOrDefault().Price;
-            }
-
-
-            //CACHE.Orders.Add(new Order()
-            //{
-            //    price = price,
-            //    date = DateTime.Now,
-            //    trip = CACHE.Trips.Where(x=> x.Id == tripId).FirstOrDefault(),
-            //    customer = customer
-            //});
-
         }
 
-        //public void AddCustomerInPlane(Customer customer, Trip trip)
-        //{
-        //    // trip.Line.Customers.Add(customer);
-        //}
+     
 
 
         public List<Trip> GetTravels()
@@ -304,19 +274,19 @@ namespace FlyFast.API.Repository
             return trips;
         }
 
-        //public int PlacesInvalibility(Trip trip)
-        //{
-        //    int places = trip.Plane.MaxPlaces - trip.Plane.Customers.Count;
-        //    return places;
+        public int PlacesInvalibility(Plane plane)
+        {
+            int places = plane.MaxPlaces - plane.Customers.Count;
+            return places;
 
-        //}
+        }
 
-        //public int FirstClassInvalibility(TICKET_TYPE type, Trip trip)
-        //{
-        //    int firstclassCustomers = trip.Plane.Customers.Where(x => x.TICKET_TYPE == TICKET_TYPE.FIRST_CLASS).Count();
-        //    int firstClassPlaces = Convert.ToInt32(trip.Plane.MaxPlaces * 0.10);
+        public int FirstClassInvalibility(Plane plane)
+        {
+            int firstclassCustomers = plane.Customers.Where(x => x.TICKET_TYPE == TICKET_TYPE.FIRST_CLASS).Count();
+            int firstClassPlaces = Convert.ToInt32(plane.MaxPlaces * 0.10);
 
-        //    return firstClassPlaces - firstclassCustomers;
-        //}
+            return firstClassPlaces - firstclassCustomers;
+        }
     }
 }
