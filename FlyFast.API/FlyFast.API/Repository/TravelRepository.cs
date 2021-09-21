@@ -1,13 +1,18 @@
 ﻿using FlyFast.API.Models;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 
 namespace FlyFast.API.Repository
 {
     public class TravelRepository : IDisposable
     {
+        #region [Logger]
+        private static ILog _logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        #endregion
         public void Dispose()
         {
 
@@ -17,7 +22,7 @@ namespace FlyFast.API.Repository
         {
             var plane = new Plane();
             plane.MaxPlaces = 300;
-            plane.NbrPlaceFirstClass = Convert.ToInt32(plane.MaxPlaces * 0.1F);
+            plane.NbrPlaceFirstClass = 0;
 
 
             var plane6 = new Plane();
@@ -28,7 +33,7 @@ namespace FlyFast.API.Repository
             plane1.MaxPlaces = 300;
             plane1.NbrPlaceFirstClass = 0;
 
-          var plane2 = new Plane();
+            var plane2 = new Plane();
             plane2.MaxPlaces = 700;
             plane2.NbrPlaceFirstClass = Convert.ToInt32(plane2.MaxPlaces * 0.1F);
 
@@ -53,8 +58,8 @@ namespace FlyFast.API.Repository
                   new Line()
                   {
                       Id= 1,
-                    Departure = AIRPORT.DTW,
-                    Arrived = AIRPORT.JFK,
+                    Departure = AIRPORT.DTW.ToString(),
+                    Arrived = AIRPORT.JFK.ToString(),
                     Plane = plane,
                     Price = 300,
                     Date = DateTime.Now.AddDays(5)
@@ -62,8 +67,8 @@ namespace FlyFast.API.Repository
                   new Line()
                   {
                          Id= 2,
-                    Departure = AIRPORT.JFK,
-                    Arrived = AIRPORT.CDG,
+                    Departure = AIRPORT.JFK.ToString(),
+                    Arrived = AIRPORT.CDG.ToString(),
                     Plane = plane6,
                     Price = 300,
                      Date = DateTime.Now.AddDays(6)
@@ -82,8 +87,8 @@ namespace FlyFast.API.Repository
                   new Line()
                   {
                          Id= 3,
-                    Departure = AIRPORT.JFK,
-                    Arrived = AIRPORT.DTW,
+                    Departure = AIRPORT.JFK.ToString(),
+                    Arrived = AIRPORT.DTW.ToString(),
                     Plane = plane1,
                     Price = 300,
                        Date = DateTime.Now.AddDays(5)
@@ -102,8 +107,8 @@ namespace FlyFast.API.Repository
                   new Line()
                   {
                          Id= 4,
-                    Departure = AIRPORT.CDG,
-                    Arrived = AIRPORT.DTW,
+                    Departure = AIRPORT.CDG.ToString(),
+                    Arrived = AIRPORT.DTW.ToString(),
                     Plane = plane2,
                     Price = 700,
                        Date = DateTime.Now.AddDays(5)
@@ -121,8 +126,8 @@ namespace FlyFast.API.Repository
                   new Line()
                   {
                          Id= 5,
-                    Departure = AIRPORT.DTW,
-                    Arrived = AIRPORT.CDG,
+                    Departure = AIRPORT.DTW.ToString(),
+                    Arrived = AIRPORT.CDG.ToString(),
                     Plane = plane3,
                     Price = 700,
                        Date = DateTime.Now.AddDays(5)
@@ -141,8 +146,8 @@ namespace FlyFast.API.Repository
                   new Line()
                   {
                          Id= 6,
-                    Departure = AIRPORT.JFK,
-                    Arrived = AIRPORT.CDG,
+                    Departure = AIRPORT.JFK.ToString(),
+                    Arrived = AIRPORT.CDG.ToString(),
                     Plane = plane4,
                     Price = 1000,
                        Date = DateTime.Now.AddDays(5)
@@ -160,8 +165,8 @@ namespace FlyFast.API.Repository
                   new Line()
                   {
                          Id= 7,
-                    Departure = AIRPORT.CDG,
-                    Arrived = AIRPORT.JFK,
+                    Departure = AIRPORT.CDG.ToString(),
+                    Arrived = AIRPORT.JFK.ToString(),
                     Plane = plane5,
                     Price = 1000,
                        Date = DateTime.Now.AddDays(5)
@@ -180,7 +185,7 @@ namespace FlyFast.API.Repository
                 date = new DateTime(),
                 trip = CACHE.Trips[1]
 
-            }) ;
+            });
 
             CACHE.Orders.Add(new Order()
             {
@@ -196,17 +201,18 @@ namespace FlyFast.API.Repository
 
         }
 
-        internal void CreateOrder(int tripId , Customer customer, TICKET_TYPE type)
+        internal void CreateOrder(int tripId, Customer customer, TICKET_TYPE type)
         {
             List<Line> lines = CACHE.Trips.Where(x => x.Id == tripId).FirstOrDefault().Line;
 
             float price = 0;
-            if(lines.Count > 1)
+            if (lines.Count > 1)
             {
-                
-                foreach(Line item in lines)
+
+                foreach (Line item in lines)
                 {
-                    switch (type) {
+                    switch (type)
+                    {
                         case (TICKET_TYPE.SECOND_CLASS):
                             price += item.Price;
                             break;
@@ -214,10 +220,10 @@ namespace FlyFast.API.Repository
                             price += item.Price * 2;
                             break;
                     }
-               
+
                 }
 
-                price =  price * 0.85f;
+                price = price * 0.85f;
             }
             else
             {
@@ -229,7 +235,7 @@ namespace FlyFast.API.Repository
             {
                 price = price,
                 date = DateTime.Now,
-                trip = CACHE.Trips.Where(x=> x.Id == tripId).FirstOrDefault(),
+                trip = CACHE.Trips.Where(x => x.Id == tripId).FirstOrDefault(),
                 customer = customer
             });
 
@@ -237,15 +243,16 @@ namespace FlyFast.API.Repository
 
         public void AddCustomerInPlane(Customer customer, Trip trip)
         {
-            List<Line> lines = CACHE.Trips.Where(x => x.Id == tripId).FirstOrDefault().Line;
+            List<Line> lines = CACHE.Trips.Where(x => x.Id == trip.Id).FirstOrDefault().Line;
 
             float price = 0;
-            if(lines.Count > 1)
+            if (lines.Count > 1)
             {
-                
-                foreach(Line item in lines)
+
+                foreach (Line item in lines)
                 {
-                    switch (type) {
+                    switch (customer.TickerType)
+                    {
                         case (TICKET_TYPE.SECOND_CLASS):
                             price += item.Price;
                             break;
@@ -253,10 +260,10 @@ namespace FlyFast.API.Repository
                             price += item.Price * 2;
                             break;
                     }
-               
+
                 }
 
-                price =  price * 0.85f;
+                price = price * 0.85f;
             }
             else
             {
@@ -264,20 +271,20 @@ namespace FlyFast.API.Repository
             }
 
 
-            CACHE.Orders.Add(new Order()
-            {
-                price = price,
-                date = DateTime.Now,
-                trip = CACHE.Trips.Where(x=> x.Id == tripId).FirstOrDefault(),
-                customer = customer
-            });
+            //CACHE.Orders.Add(new Order()
+            //{
+            //    price = price,
+            //    date = DateTime.Now,
+            //    trip = CACHE.Trips.Where(x=> x.Id == tripId).FirstOrDefault(),
+            //    customer = customer
+            //});
 
         }
 
-        public void AddCustomerInPlane(Customer customer, Trip trip)
-        {
-            // trip.Line.Customers.Add(customer);
-        }
+        //public void AddCustomerInPlane(Customer customer, Trip trip)
+        //{
+        //    // trip.Line.Customers.Add(customer);
+        //}
 
 
         public List<Trip> GetTravels()
@@ -291,6 +298,7 @@ namespace FlyFast.API.Repository
             }
             catch (Exception ex)
             {
+                _logger.Error(ex);
             }
 
             return trips;
