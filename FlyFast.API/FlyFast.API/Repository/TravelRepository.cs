@@ -26,7 +26,7 @@ namespace FlyFast.API.Repository
 
 
             var plane6 = new Plane();
-            plane6.MaxPlaces = 1000;
+            plane6.MaxPlaces = 700;
             plane6.NbrPlaceFirstClass = Convert.ToInt32(plane6.MaxPlaces * 0.1F);
 
             var plane1 = new Plane();
@@ -58,8 +58,8 @@ namespace FlyFast.API.Repository
                   new Line()
                   {
                       Id= 1,
-                    Departure = AIRPORT.DTW.ToString(),
-                    Arrived = AIRPORT.JFK.ToString(),
+                    Departure = AIRPORT.JFK.ToString(),
+                    Arrived = AIRPORT.DTW.ToString(),
                     Plane = plane,
                     Price = 300,
                     Date = DateTime.Now.AddDays(5)
@@ -67,10 +67,10 @@ namespace FlyFast.API.Repository
                   new Line()
                   {
                          Id= 2,
-                    Departure = AIRPORT.JFK.ToString(),
+                    Departure = AIRPORT.DTW.ToString(),
                     Arrived = AIRPORT.CDG.ToString(),
                     Plane = plane6,
-                    Price = 300,
+                    Price = 700,
                      Date = DateTime.Now.AddDays(6)
                   }
                 }
