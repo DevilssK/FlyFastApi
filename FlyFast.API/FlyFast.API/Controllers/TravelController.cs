@@ -69,6 +69,29 @@ namespace FlyFast.API.Controllers
             return Lines;
         }
 
+        [HttpGet]
+        [Route("Lines")]
+        public List<Line> GetListOfLines([FromUri] string date)
+        {
+            List<Line> Lines = new List<Line>();
+            foreach (var item in _repository.GetTravels())
+            {
+                foreach (var line in item.Line)
+                {
+                    Line oneLine = new Line();
+                    oneLine.Id = line.Id;
+                    oneLine.Price = line.Price;
+                    oneLine.Arrived = line.Arrived;
+                    oneLine.Departure = line.Departure;
+                    oneLine.Date = line.Date;
+                    Lines.Add(oneLine);
+                }
+            }
+            
+            List<Line> SortedLines = Lines.Where(x=>x.Date == Convert.ToDateTime(date)).ToList();
+            return SortedLines;
+        }
+            
 
         [HttpGet]
         [Route("Orders")]
@@ -101,7 +124,7 @@ namespace FlyFast.API.Controllers
             Customer customer = new Customer();
             customer.Name = reservation.customerName;
             Trip trip = CACHE.Trips.Where(x => x.Id == reservation.tripId).FirstOrDefault();
-            _repository.AddCustomerInPlane(customer, trip , reservation.ticketTypes);
+            _repository.CreateOrder(reservation.tripId, customer, reservation.ticketTypes);
             return true;
         }
     }

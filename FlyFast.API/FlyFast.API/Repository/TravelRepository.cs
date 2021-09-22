@@ -150,7 +150,7 @@ namespace FlyFast.API.Repository
                     Arrived = AIRPORT.CDG.ToString(),
                     Plane = plane4,
                     Price = 1000,
-                       Date = DateTime.Now.AddDays(5)
+                    Date = DateTime.Now.AddDays(5)
                   }
                 },
                 Date = DateTime.Now.AddDays(5),
@@ -169,7 +169,7 @@ namespace FlyFast.API.Repository
                     Arrived = AIRPORT.JFK.ToString(),
                     Plane = plane5,
                     Price = 1000,
-                       Date = DateTime.Now.AddDays(5)
+                    Date = DateTime.Now.AddDays(5)
                   }
                 },
                 Date = DateTime.Now.AddDays(5),
@@ -283,7 +283,7 @@ namespace FlyFast.API.Repository
 
         public int FirstClassInvalibility(Plane plane)
         {
-            int firstclassCustomers = plane.Customers.Where(x => x.TICKET_TYPE == TICKET_TYPE.FIRST_CLASS).Count();
+            int firstclassCustomers = plane.Customers.Where(x => x.TickerType == TICKET_TYPE.FIRST_CLASS).Count();
             int firstClassPlaces = Convert.ToInt32(plane.MaxPlaces * 0.10);
 
             return firstClassPlaces - firstclassCustomers;
