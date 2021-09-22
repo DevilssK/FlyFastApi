@@ -47,6 +47,17 @@ namespace FlyFast.API.Controllers
         }
 
         [HttpGet]
+        [Route("Travels")]
+        public List<Trip> GetListOfTravel([FromUri] string date)
+        {
+            List<Trip> trips = new List<Trip>();
+
+            trips = _repository.GetTravels();
+            var sortedTrip = trips.Where(x => x.Date == Convert.ToDateTime(date)).ToList();  
+            return sortedTrip;
+        }
+
+        [HttpGet]
         [Route("Lines")]
         public List<Line> GetListOfLines()
         {
@@ -65,7 +76,6 @@ namespace FlyFast.API.Controllers
                 }
             }
 
-
             return Lines;
         }
 
@@ -73,6 +83,11 @@ namespace FlyFast.API.Controllers
         [Route("Lines")]
         public List<Line> GetListOfLines([FromUri] string date)
         {
+            _logger.Debug("================================================================");
+            _logger.Debug("Request [Route('Lines')] ");
+            _logger.Debug($"Param  : {date}");
+            _logger.Debug("================================================================");
+
             List<Line> Lines = new List<Line>();
             foreach (var item in _repository.GetTravels())
             {
