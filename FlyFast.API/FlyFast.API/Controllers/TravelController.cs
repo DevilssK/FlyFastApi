@@ -75,7 +75,6 @@ namespace FlyFast.API.Controllers
                     Lines.Add(oneLine);
                 }
             }
-
             return Lines;
         }
 
@@ -130,17 +129,18 @@ namespace FlyFast.API.Controllers
 
         [HttpPost]
         [Route("Book")]
-        public bool PostReservation(ReservationViewModel reservation)
+        public HttpResponse PostReservation(ReservationViewModel reservation)
         {
             _logger.Debug("================================================================");
             _logger.Debug("Request [Route('Book')] ");
             _logger.Debug($"ViewModel en param  : {Newtonsoft.Json.JsonConvert.SerializeObject(reservation)}");
             _logger.Debug("================================================================");
+            
             Customer customer = new Customer();
             customer.Name = reservation.customerName;
             Trip trip = CACHE.Trips.Where(x => x.Id == reservation.tripId).FirstOrDefault();
             _repository.CreateOrder(reservation.tripId, customer, reservation.ticketTypes);
-            return true;
+            return new Http ;
         }
     }
 }

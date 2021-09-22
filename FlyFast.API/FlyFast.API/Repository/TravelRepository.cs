@@ -203,8 +203,6 @@ namespace FlyFast.API.Repository
 
         internal void CreateOrder(int tripId , Customer customer, List<TICKET_TYPE> ticketType)
         {
-
-
             List<Line> lines = CACHE.Trips.Where(x => x.Id == tripId).FirstOrDefault().Line;
 
             float price = 0;
